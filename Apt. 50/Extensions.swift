@@ -11,3 +11,15 @@ import Foundation
 protocol FirebaseType {
     var identifier: String {get set}
 }
+
+extension String {
+    
+}
+
+extension Date {
+    
+}
+
+extension TimeInterval {
+    
+}

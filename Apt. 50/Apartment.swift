@@ -7,3 +7,13 @@
 //
 
 import Foundation
+
+class Apartment {
+    let name: String
+    let website: NSURL?
+    
+    init(name: String, website: NSURL?) {
+        self.name = name
+        self.website = website
+    }
+}

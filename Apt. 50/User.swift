@@ -7,3 +7,18 @@
 //
 
 import Foundation
+
+class User {
+    
+    let name: String
+    let contactInfo: ContactInfo
+    let posts: [Post]?
+    let bookmarks: [Post]?
+    
+    init(name: String, contactInfo: ContactInfo) {
+        self.name = name
+        self.contactInfo = contactInfo
+        self.posts = nil
+        self.bookmarks = nil
+    }
+}
