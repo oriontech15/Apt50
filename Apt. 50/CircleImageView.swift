@@ -8,7 +8,26 @@
 
 import UIKit
 
+@IBDesignable
 class CircleImageView: UIImageView {
+    
+    @IBInspectable var cornerRadius: CGFloat = 0 {
+        didSet {
+            setupView()
+        }
+    }
+    
+    @IBInspectable var border: Bool = false {
+        didSet {
+            setupView()
+        }
+    }
+    
+    @IBInspectable var maskOn: Bool = false {
+        didSet {
+            setupView()
+        }
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -17,7 +36,7 @@ class CircleImageView: UIImageView {
     
     func setupView() {
         self.layoutIfNeeded()
-        self.layer.cornerRadius = self.frame.height / 2
+        self.layer.cornerRadius = cornerRadius
         self.layer.masksToBounds = true
     }
     

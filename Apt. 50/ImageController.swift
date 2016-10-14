@@ -7,3 +7,12 @@
 //
 
 import Foundation
+import UIKit
+
+class ImageController {
+    static let shared = ImageController()
+    
+    func mockPhotos() -> [UIImage] {
+        return [#imageLiteral(resourceName: "Kitchen 1"), #imageLiteral(resourceName: "Kitchen 2"), #imageLiteral(resourceName: "Kitchen 3"), #imageLiteral(resourceName: "Kitchen 4")]
+    }
+}

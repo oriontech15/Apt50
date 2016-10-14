@@ -23,6 +23,13 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var greenButton: CustomRoundedButton!
     
     @IBOutlet weak var settingsViewBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var blueButtonHeight: NSLayoutConstraint!
+    @IBOutlet weak var blueButtonWidth: NSLayoutConstraint!
+    @IBOutlet weak var greenButtonHeight: NSLayoutConstraint!
+    @IBOutlet weak var greenButtonWidth: NSLayoutConstraint!
+    @IBOutlet weak var salmonButtonHeight: NSLayoutConstraint!
+    @IBOutlet weak var salmonButtonWidth: NSLayoutConstraint!
+    
     
     var settingsViewUp: Bool = true
     
@@ -56,6 +63,20 @@ class ProfileViewController: UIViewController {
                 self.myPostsButton.setImage(#imageLiteral(resourceName: "MyPostsBlue"), for: .normal)
             })
             
+            blueButton.layer.borderWidth = 4
+            blueButton.layer.borderColor = UIColor.darkGray.cgColor
+            blueButtonHeight.constant = 60
+            blueButtonWidth.constant = 60
+            blueButton.cornerRadius = 30
+            greenButtonHeight.constant = 40
+            greenButtonWidth.constant = 40
+            greenButton.cornerRadius = 20
+            salmonButtonHeight.constant = 40
+            salmonButtonWidth.constant = 40
+            salmonButton.cornerRadius = 20
+            salmonButton.layer.borderWidth = 0
+            greenButton.layer.borderWidth = 0
+            
             self.tabBarController?.tabBar.items?[0].image = #imageLiteral(resourceName: "PostList").withRenderingMode(.alwaysOriginal)
             self.tabBarController?.tabBar.items?[1].image = #imageLiteral(resourceName: "CreatePostBlue").withRenderingMode(.alwaysOriginal)
             self.tabBarController?.tabBar.items?[2].image = #imageLiteral(resourceName: "Profile").withRenderingMode(.alwaysOriginal)
@@ -71,6 +92,20 @@ class ProfileViewController: UIViewController {
                 self.myPostsButton.setImage(#imageLiteral(resourceName: "MyPostsGreen"), for: .normal)
             })
             
+            blueButton.layer.borderWidth = 0
+            greenButton.layer.borderWidth = 4
+            blueButtonHeight.constant = 40
+            blueButtonWidth.constant = 40
+            blueButton.cornerRadius = 20
+            greenButtonHeight.constant = 60
+            greenButtonWidth.constant = 60
+            greenButton.cornerRadius = 30
+            salmonButtonHeight.constant = 40
+            salmonButtonWidth.constant = 40
+            salmonButton.cornerRadius = 20
+            greenButton.layer.borderColor = UIColor.darkGray.cgColor
+            salmonButton.layer.borderWidth = 0
+            
             self.tabBarController?.tabBar.items?[0].image = #imageLiteral(resourceName: "PostList").withRenderingMode(.alwaysOriginal)
             self.tabBarController?.tabBar.items?[1].image = #imageLiteral(resourceName: "CreatePostGreen").withRenderingMode(.alwaysOriginal)
             self.tabBarController?.tabBar.items?[2].image = #imageLiteral(resourceName: "Profile").withRenderingMode(.alwaysOriginal)
@@ -85,6 +120,20 @@ class ProfileViewController: UIViewController {
                 self.bookmarksButton.setImage(#imageLiteral(resourceName: "bookmarkIcon"), for: .normal)
                 self.myPostsButton.setImage(#imageLiteral(resourceName: "myPostsIcon"), for: .normal)
             })
+            
+            blueButton.layer.borderWidth = 0
+            greenButton.layer.borderWidth = 0
+            blueButtonHeight.constant = 40
+            blueButtonWidth.constant = 40
+            blueButton.cornerRadius = 20
+            greenButtonHeight.constant = 40
+            greenButtonWidth.constant = 40
+            greenButton.cornerRadius = 20
+            salmonButtonHeight.constant = 60
+            salmonButtonWidth.constant = 60
+            salmonButton.cornerRadius = 30
+            salmonButton.layer.borderWidth = 4
+            salmonButton.layer.borderColor = UIColor.darkGray.cgColor
             
             self.tabBarController?.tabBar.items?[0].image = #imageLiteral(resourceName: "PostList").withRenderingMode(.alwaysOriginal)
             self.tabBarController?.tabBar.items?[1].image = #imageLiteral(resourceName: "CreatePost1").withRenderingMode(.alwaysOriginal)
@@ -110,16 +159,43 @@ class ProfileViewController: UIViewController {
         case 0:
             blueButton.layer.borderWidth = 4
             blueButton.layer.borderColor = UIColor.darkGray.cgColor
+            blueButtonHeight.constant = 60
+            blueButtonWidth.constant = 60
+            blueButton.cornerRadius = 30
+            greenButtonHeight.constant = 40
+            greenButtonWidth.constant = 40
+            greenButton.cornerRadius = 20
+            salmonButtonHeight.constant = 40
+            salmonButtonWidth.constant = 40
+            salmonButton.cornerRadius = 20
             salmonButton.layer.borderWidth = 0
             greenButton.layer.borderWidth = 0
         case 1:
             blueButton.layer.borderWidth = 0
             greenButton.layer.borderWidth = 4
+            blueButtonHeight.constant = 40
+            blueButtonWidth.constant = 40
+            blueButton.cornerRadius = 20
+            greenButtonHeight.constant = 60
+            greenButtonWidth.constant = 60
+            greenButton.cornerRadius = 30
+            salmonButtonHeight.constant = 40
+            salmonButtonWidth.constant = 40
+            salmonButton.cornerRadius = 20
             greenButton.layer.borderColor = UIColor.darkGray.cgColor
             salmonButton.layer.borderWidth = 0
         case 2:
             blueButton.layer.borderWidth = 0
             greenButton.layer.borderWidth = 0
+            blueButtonHeight.constant = 40
+            blueButtonWidth.constant = 40
+            blueButton.cornerRadius = 20
+            greenButtonHeight.constant = 40
+            greenButtonWidth.constant = 40
+            greenButton.cornerRadius = 20
+            salmonButtonHeight.constant = 60
+            salmonButtonWidth.constant = 60
+            salmonButton.cornerRadius = 30
             salmonButton.layer.borderWidth = 4
             salmonButton.layer.borderColor = UIColor.darkGray.cgColor
         default:

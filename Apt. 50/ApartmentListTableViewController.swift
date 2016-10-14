@@ -148,7 +148,7 @@ class ApartmentListTableViewController: UITableViewController {
             self.view.layoutIfNeeded()
         }) { (bool) in
             
-            self.performSegue(withIdentifier: "toListingsSegue", sender: nil)
+            self.performSegue(withIdentifier: "toListingsSegue", sender: cell)
         }
     }
     
@@ -235,7 +235,7 @@ class ApartmentListTableViewController: UITableViewController {
         if segue.identifier == "toListingsSegue" {
             if let cell = sender as? ApartmentTableViewCell {
                 if let indexPath = self.tableView.indexPath(for: cell) {
-                    if let navController = segue.destination as? UINavigationController, let listingsVC = navController.topViewController as? ListingsTableViewController {
+                    if let listingsVC = segue.destination as? ListingsTableViewController {
                         listingsVC.apartment = apartments[indexPath.section]
                     }
                 }

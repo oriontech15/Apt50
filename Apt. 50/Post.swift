@@ -20,8 +20,10 @@ class Post: FirebaseType {
     private let kLaundryType = "laundryType"
     private let kPhotos = "photos"
     
-    var apartmentID: String
-    var contactInfoID: String
+    var apartment: Apartment!
+    var apartmentID: String = ""
+    var contactInfo: ContactInfo!
+    var contactInfoID: String = ""
     var roomType: Int
     var apartmentType: Int
     var tvType: Int
@@ -48,8 +50,8 @@ class Post: FirebaseType {
         return dictionaryCopy
     }
     
-    init(apartment: String,
-         contactInfo: String,
+    init(apartment: Apartment,
+         contactInfo: ContactInfo,
          roomType: RoomType,
          apartmentType: ApartmentType,
          tvType: TVType,
@@ -57,8 +59,8 @@ class Post: FirebaseType {
          laundryType: LaundryType,
          photoURLs: [String]) {
         
-        self.apartmentID = apartment
-        self.contactInfoID = contactInfo
+        self.apartment = apartment
+        self.contactInfo = contactInfo
         self.roomType = roomType.hashValue
         self.apartmentType = apartmentType.hashValue
         self.tvType = tvType.hashValue

@@ -18,6 +18,8 @@
 		DB3D83491DA9A84F003DD855 /* CircleLabelWithBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3D83481DA9A84F003DD855 /* CircleLabelWithBorder.swift */; };
 		DB3D834B1DA9B2F7003DD855 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3D834A1DA9B2F7003DD855 /* CircleView.swift */; };
 		DB3D834D1DA9B307003DD855 /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3D834C1DA9B307003DD855 /* CircleImageView.swift */; };
+		DB41AD191DB14694007FC2A1 /* ContactInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB41AD181DB14694007FC2A1 /* ContactInfoController.swift */; };
+		DB41AD1B1DB14FF2007FC2A1 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB41AD1A1DB14FF2007FC2A1 /* PostTableViewCell.swift */; };
 		DB7296CB1DAB58B300CB5B77 /* MyPostsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7296CA1DAB58B300CB5B77 /* MyPostsTableViewController.swift */; };
 		DB7296CD1DAB58CA00CB5B77 /* BookmarksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7296CC1DAB58CA00CB5B77 /* BookmarksTableViewController.swift */; };
 		DB7296CF1DAB67AC00CB5B77 /* CustomRoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7296CE1DAB67AC00CB5B77 /* CustomRoundedView.swift */; };
@@ -48,7 +50,6 @@
 		DBBC74651DA49EB500C18114 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBC74641DA49EB500C18114 /* CustomTextField.swift */; };
 		DBBC74671DA49EBC00C18114 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBC74661DA49EBC00C18114 /* CustomLabel.swift */; };
 		DBBC74691DA49EDD00C18114 /* CreatePostImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBC74681DA49EDD00C18114 /* CreatePostImageTableViewCell.swift */; };
-		DBBC746B1DA49EE700C18114 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBC746A1DA49EE700C18114 /* PostTableViewCell.swift */; };
 		DBBC746D1DA49F8100C18114 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBC746C1DA49F8100C18114 /* Extensions.swift */; };
 		DBBC746F1DA49F8C00C18114 /* Apartment.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBC746E1DA49F8C00C18114 /* Apartment.swift */; };
 		DBBC74711DA49F9400C18114 /* ContactInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBC74701DA49F9400C18114 /* ContactInfo.swift */; };
@@ -98,6 +99,8 @@
 		DB3D83481DA9A84F003DD855 /* CircleLabelWithBorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleLabelWithBorder.swift; sourceTree = "<group>"; };
 		DB3D834A1DA9B2F7003DD855 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		DB3D834C1DA9B307003DD855 /* CircleImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleImageView.swift; sourceTree = "<group>"; };
+		DB41AD181DB14694007FC2A1 /* ContactInfoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactInfoController.swift; sourceTree = "<group>"; };
+		DB41AD1A1DB14FF2007FC2A1 /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		DB7296CA1DAB58B300CB5B77 /* MyPostsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPostsTableViewController.swift; sourceTree = "<group>"; };
 		DB7296CC1DAB58CA00CB5B77 /* BookmarksTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookmarksTableViewController.swift; sourceTree = "<group>"; };
 		DB7296CE1DAB67AC00CB5B77 /* CustomRoundedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomRoundedView.swift; sourceTree = "<group>"; };
@@ -134,7 +137,6 @@
 		DBBC74641DA49EB500C18114 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		DBBC74661DA49EBC00C18114 /* CustomLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
 		DBBC74681DA49EDD00C18114 /* CreatePostImageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePostImageTableViewCell.swift; sourceTree = "<group>"; };
-		DBBC746A1DA49EE700C18114 /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		DBBC746C1DA49F8100C18114 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		DBBC746E1DA49F8C00C18114 /* Apartment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Apartment.swift; sourceTree = "<group>"; };
 		DBBC74701DA49F9400C18114 /* ContactInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactInfo.swift; sourceTree = "<group>"; };
@@ -279,6 +281,7 @@
 				DBBC74781DA49FC100C18114 /* UserController.swift */,
 				DBBC747A1DA49FC900C18114 /* NetworkController.swift */,
 				DBBC747C1DA49FE600C18114 /* PostController.swift */,
+				DB41AD181DB14694007FC2A1 /* ContactInfoController.swift */,
 				DBBC747E1DA49FEE00C18114 /* ImageController.swift */,
 				DBBC74801DA4A00400C18114 /* ApartmentController.swift */,
 			);
@@ -300,6 +303,7 @@
 		DBBC74841DA4A0AB00C18114 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DB41AD1A1DB14FF2007FC2A1 /* PostTableViewCell.swift */,
 				DB9F01631DAEC29000C272F3 /* PreviewView.swift */,
 				DB3D834A1DA9B2F7003DD855 /* CircleView.swift */,
 				DB7296CE1DAB67AC00CB5B77 /* CustomRoundedView.swift */,
@@ -309,7 +313,6 @@
 				DBBC74641DA49EB500C18114 /* CustomTextField.swift */,
 				DBBC74661DA49EBC00C18114 /* CustomLabel.swift */,
 				DBBC74681DA49EDD00C18114 /* CreatePostImageTableViewCell.swift */,
-				DBBC746A1DA49EE700C18114 /* PostTableViewCell.swift */,
 				DB3D83461DA9A351003DD855 /* ApartmentTableViewCell.swift */,
 			);
 			name = Views;
@@ -625,6 +628,7 @@
 			files = (
 				DBBC747D1DA49FE600C18114 /* PostController.swift in Sources */,
 				DBBC74711DA49F9400C18114 /* ContactInfo.swift in Sources */,
+				DB41AD191DB14694007FC2A1 /* ContactInfoController.swift in Sources */,
 				DB3D83451DA99BCB003DD855 /* CustomTabBarController.swift in Sources */,
 				DBBC74651DA49EB500C18114 /* CustomTextField.swift in Sources */,
 				DB9F01691DAEC29000C272F3 /* PhotoCaptureDelegate.swift in Sources */,
@@ -633,6 +637,7 @@
 				DB7296CB1DAB58B300CB5B77 /* MyPostsTableViewController.swift in Sources */,
 				DBBC74791DA49FC100C18114 /* UserController.swift in Sources */,
 				DB7296CD1DAB58CA00CB5B77 /* BookmarksTableViewController.swift in Sources */,
+				DB41AD1B1DB14FF2007FC2A1 /* PostTableViewCell.swift in Sources */,
 				DBBC74671DA49EBC00C18114 /* CustomLabel.swift in Sources */,
 				DB3D83491DA9A84F003DD855 /* CircleLabelWithBorder.swift in Sources */,
 				DBBC745B1DA49E7100C18114 /* CreatePostAmenitiesViewController.swift in Sources */,
@@ -652,7 +657,6 @@
 				DB9F01671DAEC29000C272F3 /* PreviewView.swift in Sources */,
 				DB9F01681DAEC29000C272F3 /* CameraViewController.swift in Sources */,
 				DBBC74631DA49EAB00C18114 /* CustomRoundedButton.swift in Sources */,
-				DBBC746B1DA49EE700C18114 /* PostTableViewCell.swift in Sources */,
 				DBBC745D1DA49E7F00C18114 /* CreatePostConfirmationViewController.swift in Sources */,
 				DBF3D4A31DA4A78100563D0D /* Enums.swift in Sources */,
 				DBBC741A1DA49BF800C18114 /* AppDelegate.swift in Sources */,

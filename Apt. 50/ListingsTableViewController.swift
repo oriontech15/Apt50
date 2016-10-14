@@ -11,6 +11,7 @@ import UIKit
 class ListingsTableViewController: UITableViewController {
     
     var apartment: Apartment?
+    var listings: [Post]?
     
     var selectedThemeColor: UIColor = .aptNone
 
@@ -29,7 +30,27 @@ class ListingsTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
-    
+    func checkListings() {
+        if let apartment = apartment {
+            let listingsForApartment = PostController.shared.getPostsForApartment(apartment: apartment)
+            if listingsForApartment?.count == 0 {
+                let backgroundView = UIView(frame: CGRect(x: 0, y: 0, width: self.tableView.frame.width, height: self.tableView.frame.height))
+                let noListingsLabel = CustomLabel(frame: CGRect(x: 50, y: self.tableView.frame.height / 2 - 100, width: self.tableView.frame.width - 100, height: 200))
+                noListingsLabel.backgroundColor = selectedThemeColor
+                noListingsLabel.textColor = .white
+                noListingsLabel.cornerRadius = 25
+                noListingsLabel.text = "Sorry... \n\nNo listings.\nCheck back later."
+                noListingsLabel.textAlignment = .center
+                noListingsLabel.numberOfLines = 0
+                noListingsLabel.font = UIFont(name: Fonts.HelveticaNeueBold.rawValue, size: 20)
+                backgroundView.addSubview(noListingsLabel)
+                    
+                self.tableView.backgroundView = backgroundView
+            } else {
+                listings = listingsForApartment
+            }
+        }
+    }
     
     @IBAction func backButtonTapped() {
         self.navigationController?.popViewController(animated: true)
@@ -59,6 +80,10 @@ class ListingsTableViewController: UITableViewController {
             self.navigationController?.navigationBar.tintColor = .white
             self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
         }
+        
+        checkListings()
+        
+        self.tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -76,26 +101,37 @@ class ListingsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         
-        return apartment?.listings?.count ?? 0
+        //return apartment?.listings?.count ?? 0
+        return listings?.count ?? 0
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "listingCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "listingCell", for: indexPath) as? PostTableViewCell
 
-        cell.textLabel?.text = apartment?.listings?[indexPath.row]
-        cell.backgroundColor = selectedThemeColor
+        let image = ImageController.shared.mockPhotos()[indexPath.row]
+        if let apartment = apartment, let listings = listings {
+            cell?.updateWith(image: image, color: selectedThemeColor, price: "240")
+        }
+        
         // Configure the cell...
 
-        return cell
+        return cell ?? UITableViewCell()
     }
-
-    /*
+    
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
-        return true
+        return false
     }
-    */
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 150
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.backgroundColor = .clear
+        cell.contentView.backgroundColor = .clear
+    }
 
     /*
     // Override to support editing the table view.

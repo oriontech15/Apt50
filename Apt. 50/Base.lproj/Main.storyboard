@@ -984,27 +984,89 @@
         <scene sceneID="47S-e5-w5L">
             <objects>
                 <tableViewController id="cDy-VV-p0S" customClass="ListingsTableViewController" customModule="Apt__50" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Z2h-jY-Jvf">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="115" sectionHeaderHeight="28" sectionFooterHeight="28" id="Z2h-jY-Jvf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="QoO-w1-mpi">
+                            <rect key="frame" x="0.0" y="64" width="375" height="10"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="listingCell" textLabel="4ng-gh-tZg" style="IBUITableViewCellStyleDefault" id="Ge8-tS-u0V">
-                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="listingCell" rowHeight="150" id="Ge8-tS-u0V" customClass="PostTableViewCell" customModule="Apt__50" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="102" width="375" height="150"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ge8-tS-u0V" id="yFt-xK-9bl">
-                                    <frame key="frameInset" width="375" height="43.5"/>
+                                    <frame key="frameInset" width="375" height="150"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4ng-gh-tZg">
-                                            <frame key="frameInset" minX="15" width="345" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KyO-fe-xAK" customClass="CustomRoundedView" customModule="Apt__50" customModuleProvider="target">
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="y4D-0a-27m" customClass="CircleImageView" customModule="Apt__50" customModuleProvider="target">
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="maskOn" value="YES"/>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="0.0"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1ek-58-gz3" customClass="CustomRoundedView" customModule="Apt__50" customModuleProvider="target">
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 320 /mo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nbU-SO-cam">
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="25" id="l3U-7o-zIR"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.0" green="0.66274509800000003" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="nbU-SO-cam" secondAttribute="trailing" constant="25" id="Kpg-4F-Aw9"/>
+                                                        <constraint firstAttribute="width" constant="200" id="MmO-Z6-xhH"/>
+                                                        <constraint firstAttribute="height" constant="30" id="VhR-bj-nJI"/>
+                                                        <constraint firstItem="nbU-SO-cam" firstAttribute="leading" secondItem="1ek-58-gz3" secondAttribute="leading" constant="10" id="alf-eT-ubl"/>
+                                                        <constraint firstItem="nbU-SO-cam" firstAttribute="centerY" secondItem="1ek-58-gz3" secondAttribute="centerY" id="fOM-fH-0Jd"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="15"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="1ek-58-gz3" secondAttribute="bottom" constant="10" id="1vz-7X-xpE"/>
+                                                <constraint firstAttribute="trailing" secondItem="1ek-58-gz3" secondAttribute="trailing" constant="-20" id="5kY-sN-pxf"/>
+                                                <constraint firstAttribute="trailing" secondItem="y4D-0a-27m" secondAttribute="trailing" id="Mt9-zc-bbD"/>
+                                                <constraint firstItem="y4D-0a-27m" firstAttribute="top" secondItem="KyO-fe-xAK" secondAttribute="top" id="oMM-qG-bd7"/>
+                                                <constraint firstAttribute="bottom" secondItem="y4D-0a-27m" secondAttribute="bottom" id="tPV-hh-glg"/>
+                                                <constraint firstItem="y4D-0a-27m" firstAttribute="leading" secondItem="KyO-fe-xAK" secondAttribute="leading" id="uiN-Pw-x0I"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="0.0"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="maskOn" value="NO"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="KyO-fe-xAK" firstAttribute="top" secondItem="yFt-xK-9bl" secondAttribute="top" id="Hfi-HK-1hH"/>
+                                        <constraint firstAttribute="bottom" secondItem="KyO-fe-xAK" secondAttribute="bottom" constant="10" id="WU4-yH-Dsd"/>
+                                        <constraint firstAttribute="trailing" secondItem="KyO-fe-xAK" secondAttribute="trailing" id="aBu-Wv-tcs"/>
+                                        <constraint firstItem="KyO-fe-xAK" firstAttribute="leading" secondItem="yFt-xK-9bl" secondAttribute="leading" id="jVz-Sw-U72"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="mainSubView" destination="KyO-fe-xAK" id="hFe-gw-BhQ"/>
+                                    <outlet property="postImageView" destination="y4D-0a-27m" id="bxw-Pc-Bke"/>
+                                    <outlet property="priceInfoView" destination="1ek-58-gz3" id="dcY-rn-SBd"/>
+                                    <outlet property="priceLabel" destination="nbU-SO-cam" id="19A-tt-bgB"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -1023,7 +1085,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lbg-hY-w7r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-169" y="1432"/>
+            <point key="canvasLocation" x="-170.40000000000001" y="1431.6341829085459"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="pJh-BU-Dj0">
@@ -1217,12 +1279,12 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Mz-GQ-1UR" customClass="CustomRoundedButton" customModule="Apt__50" customModuleProvider="target">
                                                 <color key="backgroundColor" red="0.0" green="0.66274509800000003" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="60" id="4EL-le-j3c"/>
-                                                    <constraint firstAttribute="height" constant="60" id="Dp1-hX-4oI"/>
+                                                    <constraint firstAttribute="width" constant="40" id="4EL-le-j3c"/>
+                                                    <constraint firstAttribute="height" constant="40" id="Dp1-hX-4oI"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="30"/>
+                                                        <real key="value" value="20"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
@@ -1232,12 +1294,12 @@
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8gc-aq-RnT" customClass="CustomRoundedButton" customModule="Apt__50" customModuleProvider="target">
                                                 <color key="backgroundColor" red="0.066666666669999999" green="0.77519835059999997" blue="0.19407364669999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="60" id="Ydm-XB-AMZ"/>
-                                                    <constraint firstAttribute="height" constant="60" id="wsP-px-Z5n"/>
+                                                    <constraint firstAttribute="width" constant="40" id="Ydm-XB-AMZ"/>
+                                                    <constraint firstAttribute="height" constant="40" id="wsP-px-Z5n"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="30"/>
+                                                        <real key="value" value="20"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
@@ -1247,12 +1309,12 @@
                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wtu-W2-Hhl" customClass="CustomRoundedButton" customModule="Apt__50" customModuleProvider="target">
                                                 <color key="backgroundColor" red="1" green="0.53333333329999999" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="60" id="2kv-qr-Bm4"/>
-                                                    <constraint firstAttribute="height" constant="60" id="m2N-z7-01m"/>
+                                                    <constraint firstAttribute="width" constant="40" id="2kv-qr-Bm4"/>
+                                                    <constraint firstAttribute="height" constant="40" id="m2N-z7-01m"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="30"/>
+                                                        <real key="value" value="20"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
@@ -1336,14 +1398,20 @@
                     <connections>
                         <outlet property="arrowImageView" destination="Io4-33-LPE" id="gqP-de-jlR"/>
                         <outlet property="blueButton" destination="9Mz-GQ-1UR" id="CzD-eS-63y"/>
+                        <outlet property="blueButtonHeight" destination="Dp1-hX-4oI" id="dTd-w9-YYq"/>
+                        <outlet property="blueButtonWidth" destination="4EL-le-j3c" id="fvQ-ov-RB5"/>
                         <outlet property="bookmarksButton" destination="sW4-vv-Ekr" id="g7a-Ew-JP4"/>
                         <outlet property="dividerView" destination="PKl-yv-d2w" id="CeC-4X-H8L"/>
                         <outlet property="greenButton" destination="8gc-aq-RnT" id="C8N-Cr-QQS"/>
+                        <outlet property="greenButtonHeight" destination="wsP-px-Z5n" id="qeR-WS-G4x"/>
+                        <outlet property="greenButtonWidth" destination="Ydm-XB-AMZ" id="heZ-EY-LnY"/>
                         <outlet property="imageBorderView" destination="Wrk-BD-kGG" id="BPL-r5-etp"/>
                         <outlet property="myPostsButton" destination="Vck-dJ-8iR" id="xMR-PA-YiM"/>
                         <outlet property="profileImageView" destination="eMY-hj-Vhu" id="6IQ-yB-AKd"/>
                         <outlet property="profileNameLabel" destination="TjC-XQ-fIO" id="jO4-Rl-fNm"/>
                         <outlet property="salmonButton" destination="Wtu-W2-Hhl" id="bDd-he-P42"/>
+                        <outlet property="salmonButtonHeight" destination="m2N-z7-01m" id="1g5-Vc-zxd"/>
+                        <outlet property="salmonButtonWidth" destination="2kv-qr-Bm4" id="fOk-9O-w85"/>
                         <outlet property="settingsView" destination="fRg-ZE-W7L" id="gey-p1-gbh"/>
                         <outlet property="settingsViewBottomConstraint" destination="WNG-7y-Rhi" id="r2Q-8p-oc7"/>
                         <segue destination="xXG-WA-DN4" kind="presentation" identifier="toCameraView" modalTransitionStyle="flipHorizontal" id="tQt-LT-LZ8"/>
