@@ -1363,6 +1363,16 @@
                                     <constraint firstAttribute="height" constant="28" id="iPA-5E-wbX"/>
                                 </constraints>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mJM-A5-6oH">
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="43" id="QAE-jK-efP"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Crk-4K-8g0" appends="YES" id="ssl-Ch-htZ"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.66274509800000003" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -1374,6 +1384,7 @@
                             <constraint firstItem="xVQ-OD-IZl" firstAttribute="top" secondItem="HHq-Xg-et5" secondAttribute="bottom" constant="11" id="FAG-bn-gNv"/>
                             <constraint firstAttribute="trailing" secondItem="SMq-ef-GdO" secondAttribute="trailing" id="HoY-JO-uc7"/>
                             <constraint firstItem="TOq-QC-0bJ" firstAttribute="top" secondItem="IoN-qO-s4e" secondAttribute="bottom" constant="10" id="I8y-QA-c2d"/>
+                            <constraint firstItem="mJM-A5-6oH" firstAttribute="leading" secondItem="Gd7-6n-tB4" secondAttribute="leading" id="Pkm-mP-AR4"/>
                             <constraint firstItem="SMq-ef-GdO" firstAttribute="leading" secondItem="Gd7-6n-tB4" secondAttribute="leading" id="SW9-mJ-mlm"/>
                             <constraint firstItem="Io4-33-LPE" firstAttribute="top" secondItem="SMq-ef-GdO" secondAttribute="bottom" constant="8" id="W5l-eE-GxE"/>
                             <constraint firstItem="fju-JZ-OPQ" firstAttribute="top" secondItem="fRg-ZE-W7L" secondAttribute="bottom" constant="-148" id="WNG-7y-Rhi"/>
@@ -1386,11 +1397,13 @@
                             <constraint firstItem="xVQ-OD-IZl" firstAttribute="leading" secondItem="Gd7-6n-tB4" secondAttribute="leadingMargin" constant="30" id="iPH-7U-3rG"/>
                             <constraint firstItem="NxQ-YF-bCW" firstAttribute="top" secondItem="HHq-Xg-et5" secondAttribute="bottom" constant="40" id="oEM-oI-f53"/>
                             <constraint firstItem="fRg-ZE-W7L" firstAttribute="centerX" secondItem="Gd7-6n-tB4" secondAttribute="centerX" id="qnN-ZM-eX3"/>
+                            <constraint firstAttribute="trailing" secondItem="mJM-A5-6oH" secondAttribute="trailing" id="qra-7e-Vxc"/>
                             <constraint firstItem="HHq-Xg-et5" firstAttribute="centerX" secondItem="Gd7-6n-tB4" secondAttribute="centerX" id="rQp-L5-JsT"/>
                             <constraint firstItem="m2i-l7-jQB" firstAttribute="top" secondItem="AKm-ty-mjU" secondAttribute="bottom" constant="11" id="rfG-ug-Dvj"/>
                             <constraint firstItem="AKm-ty-mjU" firstAttribute="centerX" secondItem="Gd7-6n-tB4" secondAttribute="centerX" id="sqm-jc-NfT"/>
                             <constraint firstItem="TOq-QC-0bJ" firstAttribute="leading" secondItem="Gd7-6n-tB4" secondAttribute="leadingMargin" constant="8" id="ta1-px-21Q"/>
                             <constraint firstItem="NxQ-YF-bCW" firstAttribute="top" secondItem="xVQ-OD-IZl" secondAttribute="bottom" constant="8" id="uuc-O5-IaW"/>
+                            <constraint firstItem="mJM-A5-6oH" firstAttribute="top" secondItem="SMq-ef-GdO" secondAttribute="bottom" id="uzx-13-4lE"/>
                             <constraint firstAttribute="trailing" secondItem="Io4-33-LPE" secondAttribute="trailing" constant="40" id="x0g-ZV-flY"/>
                         </constraints>
                     </view>
@@ -1426,6 +1439,11 @@
                 <tapGestureRecognizer id="0xD-dc-T2u">
                     <connections>
                         <action selector="imageViewTapped:" destination="tct-Oz-6cd" id="C19-Nh-AlV"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="Crk-4K-8g0">
+                    <connections>
+                        <action selector="updateContactInfoTapped:" destination="tct-Oz-6cd" id="Bb7-pj-YaY"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>

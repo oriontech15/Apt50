@@ -14,7 +14,6 @@ class CustomTabBarController: UITabBarController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        
         if let items = self.tabBar.items
         {
             for item in items
