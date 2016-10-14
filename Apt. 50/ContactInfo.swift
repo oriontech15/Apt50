@@ -8,14 +8,48 @@
 
 import Foundation
 
-class ContactInfo {
+class ContactInfo: FirebaseType {
+    
+    private let kContactName = "contactName"
+    private let kPhoneNumber = "phoneNumber"
+    private let kEmail = "email"
+    
+    var endpoint: String {
+        return "ContactInfo"
+    }
+    
+    var identifier: String?
     let contactName: String
     let phoneNumber: String
-    let email: String?
+    var email: String?
+    
+    var dictionaryCopy: [String : AnyObject] {
+        
+        var dictionaryCopy = [kContactName : contactName as AnyObject, kPhoneNumber : phoneNumber as AnyObject]
+        guard let email = self.email else {
+            return dictionaryCopy
+        }
+        
+        dictionaryCopy.updateValue(email as AnyObject, forKey: kEmail)
+        
+        return dictionaryCopy
+    }
     
     init(contactName: String, phoneNumber: String, email: String? = "") {
         self.contactName = contactName
         self.phoneNumber = phoneNumber
         self.email = email
+    }
+    
+    required init?(dictionary: [String : AnyObject], identifier: String) {
+        guard let contactName = dictionary[kContactName] as? String,
+            let phoneNumber = dictionary[kPhoneNumber] as? String else { return nil }
+        
+        self.contactName = contactName
+        self.phoneNumber = phoneNumber
+        
+        if let email = dictionary[kEmail] as? String {
+            self.email = email
+        }
     }
 }

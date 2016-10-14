@@ -9,21 +9,27 @@
 import Foundation
 
 enum RoomType {
-    case shared, single
+    case sharedRoom
+    case privateRoom
 }
 
 enum ApartmentType {
-    case married, male, female
+    case married
+    case male
+    case female
 }
 
 enum LaundryType {
-    case inRoom, shared
+    case inRoom
+    case shared
 }
 
 enum TVType {
-    case included, notIncluded
+    case included
+    case notIncluded
 }
 
 enum InternetType {
-    case included, notIncluded
+    case included
+    case notIncluded
 }

@@ -9,6 +9,8 @@ target 'Apt. 50' do
 pod 'Firebase'
 pod 'Firebase/Auth'
 pod 'Firebase/Database'
+pod 'Firebase/Storage'
+
   target 'Apt. 50Tests' do
     inherit! :search_paths
     # Pods for testing

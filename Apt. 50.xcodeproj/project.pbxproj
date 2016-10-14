@@ -10,6 +10,24 @@
 		6E25AD9B3FD34695EA700372 /* Pods_Apt__50UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F87D1053DBAFE2DA42E07078 /* Pods_Apt__50UITests.framework */; };
 		7D45A03FF52D891993847A5A /* Pods_Apt__50.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05795737932179E50AF7FF58 /* Pods_Apt__50.framework */; };
 		AF2B77E2C7AC24E1DC517E78 /* Pods_Apt__50Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEC09A5D2834A1163906052A /* Pods_Apt__50Tests.framework */; };
+		DB3D833D1DA97666003DD855 /* TRIDevices.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3D833C1DA97666003DD855 /* TRIDevices.swift */; };
+		DB3D833F1DA97677003DD855 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3D833E1DA97677003DD855 /* Fonts.swift */; };
+		DB3D83411DA976CC003DD855 /* ParallaxEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3D83401DA976CC003DD855 /* ParallaxEffect.swift */; };
+		DB3D83451DA99BCB003DD855 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3D83441DA99BCB003DD855 /* CustomTabBarController.swift */; };
+		DB3D83471DA9A351003DD855 /* ApartmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3D83461DA9A351003DD855 /* ApartmentTableViewCell.swift */; };
+		DB3D83491DA9A84F003DD855 /* CircleLabelWithBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3D83481DA9A84F003DD855 /* CircleLabelWithBorder.swift */; };
+		DB3D834B1DA9B2F7003DD855 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3D834A1DA9B2F7003DD855 /* CircleView.swift */; };
+		DB3D834D1DA9B307003DD855 /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3D834C1DA9B307003DD855 /* CircleImageView.swift */; };
+		DB7296CB1DAB58B300CB5B77 /* MyPostsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7296CA1DAB58B300CB5B77 /* MyPostsTableViewController.swift */; };
+		DB7296CD1DAB58CA00CB5B77 /* BookmarksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7296CC1DAB58CA00CB5B77 /* BookmarksTableViewController.swift */; };
+		DB7296CF1DAB67AC00CB5B77 /* CustomRoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7296CE1DAB67AC00CB5B77 /* CustomRoundedView.swift */; };
+		DB737B7E1DAE971F00502AE8 /* AppearanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB737B7D1DAE971F00502AE8 /* AppearanceController.swift */; };
+		DB737B801DAE9E3800502AE8 /* ThemedNavagationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB737B7F1DAE9E3800502AE8 /* ThemedNavagationController.swift */; };
+		DB9F01671DAEC29000C272F3 /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F01631DAEC29000C272F3 /* PreviewView.swift */; };
+		DB9F01681DAEC29000C272F3 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F01641DAEC29000C272F3 /* CameraViewController.swift */; };
+		DB9F01691DAEC29000C272F3 /* PhotoCaptureDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F01651DAEC29000C272F3 /* PhotoCaptureDelegate.swift */; };
+		DB9F016A1DAEC29000C272F3 /* Camera.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB9F01661DAEC29000C272F3 /* Camera.storyboard */; };
+		DBB525E81DAB004300E53BE1 /* CustomNavigationControllerLight.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB525E71DAB004300E53BE1 /* CustomNavigationControllerLight.swift */; };
 		DBBC741A1DA49BF800C18114 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBC74191DA49BF800C18114 /* AppDelegate.swift */; };
 		DBBC741C1DA49BF800C18114 /* LoginSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBC741B1DA49BF800C18114 /* LoginSignUpViewController.swift */; };
 		DBBC741F1DA49BF800C18114 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBBC741D1DA49BF800C18114 /* Main.storyboard */; };
@@ -18,10 +36,6 @@
 		DBBC74271DA49BF800C18114 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBBC74251DA49BF800C18114 /* LaunchScreen.storyboard */; };
 		DBBC74321DA49BF800C18114 /* Apt__50Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBC74311DA49BF800C18114 /* Apt__50Tests.swift */; };
 		DBBC743D1DA49BF800C18114 /* Apt__50UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBC743C1DA49BF800C18114 /* Apt__50UITests.swift */; };
-		DBBC744B1DA49DA200C18114 /* PostList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBBC744A1DA49DA200C18114 /* PostList.storyboard */; };
-		DBBC744D1DA49DB100C18114 /* PostDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBBC744C1DA49DB100C18114 /* PostDetail.storyboard */; };
-		DBBC744F1DA49DBA00C18114 /* CreatePost.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBBC744E1DA49DBA00C18114 /* CreatePost.storyboard */; };
-		DBBC74511DA49DC300C18114 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBBC74501DA49DC300C18114 /* Profile.storyboard */; };
 		DBBC74531DA49DE400C18114 /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBC74521DA49DE400C18114 /* PostDetailViewController.swift */; };
 		DBBC74551DA49DFB00C18114 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBC74541DA49DFB00C18114 /* ProfileViewController.swift */; };
 		DBBC74571DA49E5B00C18114 /* CreatePostApartmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBC74561DA49E5B00C18114 /* CreatePostApartmentViewController.swift */; };
@@ -29,12 +43,12 @@
 		DBBC745B1DA49E7100C18114 /* CreatePostAmenitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBC745A1DA49E7100C18114 /* CreatePostAmenitiesViewController.swift */; };
 		DBBC745D1DA49E7F00C18114 /* CreatePostConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBC745C1DA49E7F00C18114 /* CreatePostConfirmationViewController.swift */; };
 		DBBC745F1DA49E9300C18114 /* CreatePostImagesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBC745E1DA49E9300C18114 /* CreatePostImagesTableViewController.swift */; };
-		DBBC74611DA49E9C00C18114 /* PostListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBC74601DA49E9C00C18114 /* PostListTableViewController.swift */; };
-		DBBC74631DA49EAB00C18114 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBC74621DA49EAB00C18114 /* CustomButton.swift */; };
+		DBBC74611DA49E9C00C18114 /* ApartmentListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBC74601DA49E9C00C18114 /* ApartmentListTableViewController.swift */; };
+		DBBC74631DA49EAB00C18114 /* CustomRoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBC74621DA49EAB00C18114 /* CustomRoundedButton.swift */; };
 		DBBC74651DA49EB500C18114 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBC74641DA49EB500C18114 /* CustomTextField.swift */; };
 		DBBC74671DA49EBC00C18114 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBC74661DA49EBC00C18114 /* CustomLabel.swift */; };
 		DBBC74691DA49EDD00C18114 /* CreatePostImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBC74681DA49EDD00C18114 /* CreatePostImageTableViewCell.swift */; };
-		DBBC746B1DA49EE700C18114 /* PostListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBC746A1DA49EE700C18114 /* PostListTableViewCell.swift */; };
+		DBBC746B1DA49EE700C18114 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBC746A1DA49EE700C18114 /* PostTableViewCell.swift */; };
 		DBBC746D1DA49F8100C18114 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBC746C1DA49F8100C18114 /* Extensions.swift */; };
 		DBBC746F1DA49F8C00C18114 /* Apartment.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBC746E1DA49F8C00C18114 /* Apartment.swift */; };
 		DBBC74711DA49F9400C18114 /* ContactInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBC74701DA49F9400C18114 /* ContactInfo.swift */; };
@@ -47,6 +61,8 @@
 		DBBC747F1DA49FEE00C18114 /* ImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBC747E1DA49FEE00C18114 /* ImageController.swift */; };
 		DBBC74811DA4A00400C18114 /* ApartmentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBC74801DA4A00400C18114 /* ApartmentController.swift */; };
 		DBBC74881DA4A1CD00C18114 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DBBC74871DA4A1CD00C18114 /* GoogleService-Info.plist */; };
+		DBC522B91DAC90C1007FE134 /* ListingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC522B81DAC90C1007FE134 /* ListingsTableViewController.swift */; };
+		DBD99C001DB0404000BF2CB1 /* CustomNavigationControllerDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD99BFF1DB0404000BF2CB1 /* CustomNavigationControllerDefault.swift */; };
 		DBF3D4A31DA4A78100563D0D /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF3D4A21DA4A78100563D0D /* Enums.swift */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +89,25 @@
 		229465E81694242B460D2494 /* Pods-Apt. 50UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Apt. 50UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Apt. 50UITests/Pods-Apt. 50UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7F3CAF6F62A634056069B758 /* Pods-Apt. 50Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Apt. 50Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Apt. 50Tests/Pods-Apt. 50Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		818777D4FE7B60C1D775B4B6 /* Pods-Apt. 50.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Apt. 50.release.xcconfig"; path = "Pods/Target Support Files/Pods-Apt. 50/Pods-Apt. 50.release.xcconfig"; sourceTree = "<group>"; };
+		DB01794F1DB00F2C008E4D20 /* Apt. 50.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Apt. 50.entitlements"; sourceTree = "<group>"; };
+		DB3D833C1DA97666003DD855 /* TRIDevices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRIDevices.swift; sourceTree = "<group>"; };
+		DB3D833E1DA97677003DD855 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		DB3D83401DA976CC003DD855 /* ParallaxEffect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallaxEffect.swift; sourceTree = "<group>"; };
+		DB3D83441DA99BCB003DD855 /* CustomTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
+		DB3D83461DA9A351003DD855 /* ApartmentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApartmentTableViewCell.swift; sourceTree = "<group>"; };
+		DB3D83481DA9A84F003DD855 /* CircleLabelWithBorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleLabelWithBorder.swift; sourceTree = "<group>"; };
+		DB3D834A1DA9B2F7003DD855 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
+		DB3D834C1DA9B307003DD855 /* CircleImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleImageView.swift; sourceTree = "<group>"; };
+		DB7296CA1DAB58B300CB5B77 /* MyPostsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPostsTableViewController.swift; sourceTree = "<group>"; };
+		DB7296CC1DAB58CA00CB5B77 /* BookmarksTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookmarksTableViewController.swift; sourceTree = "<group>"; };
+		DB7296CE1DAB67AC00CB5B77 /* CustomRoundedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomRoundedView.swift; sourceTree = "<group>"; };
+		DB737B7D1DAE971F00502AE8 /* AppearanceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppearanceController.swift; sourceTree = "<group>"; };
+		DB737B7F1DAE9E3800502AE8 /* ThemedNavagationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemedNavagationController.swift; sourceTree = "<group>"; };
+		DB9F01631DAEC29000C272F3 /* PreviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
+		DB9F01641DAEC29000C272F3 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		DB9F01651DAEC29000C272F3 /* PhotoCaptureDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCaptureDelegate.swift; sourceTree = "<group>"; };
+		DB9F01661DAEC29000C272F3 /* Camera.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Camera.storyboard; sourceTree = "<group>"; };
+		DBB525E71DAB004300E53BE1 /* CustomNavigationControllerLight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationControllerLight.swift; sourceTree = "<group>"; };
 		DBBC74161DA49BF800C18114 /* Apt. 50.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Apt. 50.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBBC74191DA49BF800C18114 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DBBC741B1DA49BF800C18114 /* LoginSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSignUpViewController.swift; sourceTree = "<group>"; };
@@ -87,10 +122,6 @@
 		DBBC74381DA49BF800C18114 /* Apt. 50UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Apt. 50UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBBC743C1DA49BF800C18114 /* Apt__50UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apt__50UITests.swift; sourceTree = "<group>"; };
 		DBBC743E1DA49BF900C18114 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DBBC744A1DA49DA200C18114 /* PostList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PostList.storyboard; sourceTree = "<group>"; };
-		DBBC744C1DA49DB100C18114 /* PostDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PostDetail.storyboard; sourceTree = "<group>"; };
-		DBBC744E1DA49DBA00C18114 /* CreatePost.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CreatePost.storyboard; sourceTree = "<group>"; };
-		DBBC74501DA49DC300C18114 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		DBBC74521DA49DE400C18114 /* PostDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
 		DBBC74541DA49DFB00C18114 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		DBBC74561DA49E5B00C18114 /* CreatePostApartmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePostApartmentViewController.swift; sourceTree = "<group>"; };
@@ -98,12 +129,12 @@
 		DBBC745A1DA49E7100C18114 /* CreatePostAmenitiesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePostAmenitiesViewController.swift; sourceTree = "<group>"; };
 		DBBC745C1DA49E7F00C18114 /* CreatePostConfirmationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePostConfirmationViewController.swift; sourceTree = "<group>"; };
 		DBBC745E1DA49E9300C18114 /* CreatePostImagesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePostImagesTableViewController.swift; sourceTree = "<group>"; };
-		DBBC74601DA49E9C00C18114 /* PostListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListTableViewController.swift; sourceTree = "<group>"; };
-		DBBC74621DA49EAB00C18114 /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		DBBC74601DA49E9C00C18114 /* ApartmentListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApartmentListTableViewController.swift; sourceTree = "<group>"; };
+		DBBC74621DA49EAB00C18114 /* CustomRoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomRoundedButton.swift; sourceTree = "<group>"; };
 		DBBC74641DA49EB500C18114 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		DBBC74661DA49EBC00C18114 /* CustomLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
 		DBBC74681DA49EDD00C18114 /* CreatePostImageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePostImageTableViewCell.swift; sourceTree = "<group>"; };
-		DBBC746A1DA49EE700C18114 /* PostListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListTableViewCell.swift; sourceTree = "<group>"; };
+		DBBC746A1DA49EE700C18114 /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		DBBC746C1DA49F8100C18114 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		DBBC746E1DA49F8C00C18114 /* Apartment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Apartment.swift; sourceTree = "<group>"; };
 		DBBC74701DA49F9400C18114 /* ContactInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactInfo.swift; sourceTree = "<group>"; };
@@ -116,6 +147,8 @@
 		DBBC747E1DA49FEE00C18114 /* ImageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageController.swift; sourceTree = "<group>"; };
 		DBBC74801DA4A00400C18114 /* ApartmentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApartmentController.swift; sourceTree = "<group>"; };
 		DBBC74871DA4A1CD00C18114 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DBC522B81DAC90C1007FE134 /* ListingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingsTableViewController.swift; sourceTree = "<group>"; };
+		DBD99BFF1DB0404000BF2CB1 /* CustomNavigationControllerDefault.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationControllerDefault.swift; sourceTree = "<group>"; };
 		DBF3D4A21DA4A78100563D0D /* Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		F44763758C47754462701F2B /* Pods-Apt. 50UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Apt. 50UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Apt. 50UITests/Pods-Apt. 50UITests.release.xcconfig"; sourceTree = "<group>"; };
 		F87D1053DBAFE2DA42E07078 /* Pods_Apt__50UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Apt__50UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -199,6 +232,7 @@
 		DBBC74181DA49BF800C18114 /* Apt. 50 */ = {
 			isa = PBXGroup;
 			children = (
+				DB01794F1DB00F2C008E4D20 /* Apt. 50.entitlements */,
 				DBBC74191DA49BF800C18114 /* AppDelegate.swift */,
 				DBBC74861DA4A0D500C18114 /* Storyboards */,
 				DBBC74841DA4A0AB00C18114 /* Views */,
@@ -235,8 +269,13 @@
 		DBBC74821DA4A01400C18114 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				DB9F01651DAEC29000C272F3 /* PhotoCaptureDelegate.swift */,
+				DB3D833C1DA97666003DD855 /* TRIDevices.swift */,
+				DB3D833E1DA97677003DD855 /* Fonts.swift */,
+				DB3D83401DA976CC003DD855 /* ParallaxEffect.swift */,
 				DBBC746C1DA49F8100C18114 /* Extensions.swift */,
 				DBBC74761DA49FBB00C18114 /* FirebaseController.swift */,
+				DB737B7D1DAE971F00502AE8 /* AppearanceController.swift */,
 				DBBC74781DA49FC100C18114 /* UserController.swift */,
 				DBBC747A1DA49FC900C18114 /* NetworkController.swift */,
 				DBBC747C1DA49FE600C18114 /* PostController.swift */,
@@ -261,11 +300,17 @@
 		DBBC74841DA4A0AB00C18114 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				DBBC74621DA49EAB00C18114 /* CustomButton.swift */,
+				DB9F01631DAEC29000C272F3 /* PreviewView.swift */,
+				DB3D834A1DA9B2F7003DD855 /* CircleView.swift */,
+				DB7296CE1DAB67AC00CB5B77 /* CustomRoundedView.swift */,
+				DB3D834C1DA9B307003DD855 /* CircleImageView.swift */,
+				DB3D83481DA9A84F003DD855 /* CircleLabelWithBorder.swift */,
+				DBBC74621DA49EAB00C18114 /* CustomRoundedButton.swift */,
 				DBBC74641DA49EB500C18114 /* CustomTextField.swift */,
 				DBBC74661DA49EBC00C18114 /* CustomLabel.swift */,
 				DBBC74681DA49EDD00C18114 /* CreatePostImageTableViewCell.swift */,
-				DBBC746A1DA49EE700C18114 /* PostListTableViewCell.swift */,
+				DBBC746A1DA49EE700C18114 /* PostTableViewCell.swift */,
+				DB3D83461DA9A351003DD855 /* ApartmentTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -273,15 +318,23 @@
 		DBBC74851DA4A0B900C18114 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				DB9F01641DAEC29000C272F3 /* CameraViewController.swift */,
+				DB7296CA1DAB58B300CB5B77 /* MyPostsTableViewController.swift */,
+				DB7296CC1DAB58CA00CB5B77 /* BookmarksTableViewController.swift */,
 				DBBC741B1DA49BF800C18114 /* LoginSignUpViewController.swift */,
 				DBBC74521DA49DE400C18114 /* PostDetailViewController.swift */,
 				DBBC74541DA49DFB00C18114 /* ProfileViewController.swift */,
 				DBBC74561DA49E5B00C18114 /* CreatePostApartmentViewController.swift */,
+				DBB525E71DAB004300E53BE1 /* CustomNavigationControllerLight.swift */,
+				DBD99BFF1DB0404000BF2CB1 /* CustomNavigationControllerDefault.swift */,
+				DB737B7F1DAE9E3800502AE8 /* ThemedNavagationController.swift */,
+				DB3D83441DA99BCB003DD855 /* CustomTabBarController.swift */,
 				DBBC74581DA49E6700C18114 /* CreatePostContactInfoViewController.swift */,
 				DBBC745A1DA49E7100C18114 /* CreatePostAmenitiesViewController.swift */,
 				DBBC745C1DA49E7F00C18114 /* CreatePostConfirmationViewController.swift */,
 				DBBC745E1DA49E9300C18114 /* CreatePostImagesTableViewController.swift */,
-				DBBC74601DA49E9C00C18114 /* PostListTableViewController.swift */,
+				DBBC74601DA49E9C00C18114 /* ApartmentListTableViewController.swift */,
+				DBC522B81DAC90C1007FE134 /* ListingsTableViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -290,10 +343,7 @@
 			isa = PBXGroup;
 			children = (
 				DBBC741D1DA49BF800C18114 /* Main.storyboard */,
-				DBBC744A1DA49DA200C18114 /* PostList.storyboard */,
-				DBBC744C1DA49DB100C18114 /* PostDetail.storyboard */,
-				DBBC744E1DA49DBA00C18114 /* CreatePost.storyboard */,
-				DBBC74501DA49DC300C18114 /* Profile.storyboard */,
+				DB9F01661DAEC29000C272F3 /* Camera.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -376,6 +426,11 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 4637N428EN;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					DBBC742C1DA49BF800C18114 = {
 						CreatedOnToolsVersion = 8.0;
@@ -416,14 +471,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DBBC744F1DA49DBA00C18114 /* CreatePost.storyboard in Resources */,
 				DBBC74881DA4A1CD00C18114 /* GoogleService-Info.plist in Resources */,
-				DBBC744B1DA49DA200C18114 /* PostList.storyboard in Resources */,
 				DBBC74271DA49BF800C18114 /* LaunchScreen.storyboard in Resources */,
 				DBBC74241DA49BF800C18114 /* Assets.xcassets in Resources */,
 				DBBC741F1DA49BF800C18114 /* Main.storyboard in Resources */,
-				DBBC74511DA49DC300C18114 /* Profile.storyboard in Resources */,
-				DBBC744D1DA49DB100C18114 /* PostDetail.storyboard in Resources */,
+				DB9F016A1DAEC29000C272F3 /* Camera.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -573,31 +625,50 @@
 			files = (
 				DBBC747D1DA49FE600C18114 /* PostController.swift in Sources */,
 				DBBC74711DA49F9400C18114 /* ContactInfo.swift in Sources */,
+				DB3D83451DA99BCB003DD855 /* CustomTabBarController.swift in Sources */,
 				DBBC74651DA49EB500C18114 /* CustomTextField.swift in Sources */,
+				DB9F01691DAEC29000C272F3 /* PhotoCaptureDelegate.swift in Sources */,
 				DBBC741C1DA49BF800C18114 /* LoginSignUpViewController.swift in Sources */,
 				DBBC74531DA49DE400C18114 /* PostDetailViewController.swift in Sources */,
+				DB7296CB1DAB58B300CB5B77 /* MyPostsTableViewController.swift in Sources */,
 				DBBC74791DA49FC100C18114 /* UserController.swift in Sources */,
+				DB7296CD1DAB58CA00CB5B77 /* BookmarksTableViewController.swift in Sources */,
 				DBBC74671DA49EBC00C18114 /* CustomLabel.swift in Sources */,
+				DB3D83491DA9A84F003DD855 /* CircleLabelWithBorder.swift in Sources */,
 				DBBC745B1DA49E7100C18114 /* CreatePostAmenitiesViewController.swift in Sources */,
 				DBBC74591DA49E6700C18114 /* CreatePostContactInfoViewController.swift in Sources */,
 				DBBC747B1DA49FC900C18114 /* NetworkController.swift in Sources */,
+				DB3D833F1DA97677003DD855 /* Fonts.swift in Sources */,
 				DBBC74551DA49DFB00C18114 /* ProfileViewController.swift in Sources */,
-				DBBC74611DA49E9C00C18114 /* PostListTableViewController.swift in Sources */,
+				DBBC74611DA49E9C00C18114 /* ApartmentListTableViewController.swift in Sources */,
+				DB7296CF1DAB67AC00CB5B77 /* CustomRoundedView.swift in Sources */,
 				DBBC74811DA4A00400C18114 /* ApartmentController.swift in Sources */,
 				DBBC74571DA49E5B00C18114 /* CreatePostApartmentViewController.swift in Sources */,
+				DB3D83471DA9A351003DD855 /* ApartmentTableViewCell.swift in Sources */,
+				DBB525E81DAB004300E53BE1 /* CustomNavigationControllerLight.swift in Sources */,
 				DBBC74221DA49BF800C18114 /* Apt__50.xcdatamodeld in Sources */,
-				DBBC74631DA49EAB00C18114 /* CustomButton.swift in Sources */,
-				DBBC746B1DA49EE700C18114 /* PostListTableViewCell.swift in Sources */,
+				DB3D83411DA976CC003DD855 /* ParallaxEffect.swift in Sources */,
+				DBC522B91DAC90C1007FE134 /* ListingsTableViewController.swift in Sources */,
+				DB9F01671DAEC29000C272F3 /* PreviewView.swift in Sources */,
+				DB9F01681DAEC29000C272F3 /* CameraViewController.swift in Sources */,
+				DBBC74631DA49EAB00C18114 /* CustomRoundedButton.swift in Sources */,
+				DBBC746B1DA49EE700C18114 /* PostTableViewCell.swift in Sources */,
 				DBBC745D1DA49E7F00C18114 /* CreatePostConfirmationViewController.swift in Sources */,
 				DBF3D4A31DA4A78100563D0D /* Enums.swift in Sources */,
 				DBBC741A1DA49BF800C18114 /* AppDelegate.swift in Sources */,
+				DBD99C001DB0404000BF2CB1 /* CustomNavigationControllerDefault.swift in Sources */,
 				DBBC746F1DA49F8C00C18114 /* Apartment.swift in Sources */,
+				DB737B7E1DAE971F00502AE8 /* AppearanceController.swift in Sources */,
+				DB3D834B1DA9B2F7003DD855 /* CircleView.swift in Sources */,
 				DBBC747F1DA49FEE00C18114 /* ImageController.swift in Sources */,
+				DB3D834D1DA9B307003DD855 /* CircleImageView.swift in Sources */,
 				DBBC746D1DA49F8100C18114 /* Extensions.swift in Sources */,
 				DBBC74691DA49EDD00C18114 /* CreatePostImageTableViewCell.swift in Sources */,
 				DBBC745F1DA49E9300C18114 /* CreatePostImagesTableViewController.swift in Sources */,
 				DBBC74731DA49FA100C18114 /* Post.swift in Sources */,
+				DB3D833D1DA97666003DD855 /* TRIDevices.swift in Sources */,
 				DBBC74771DA49FBB00C18114 /* FirebaseController.swift in Sources */,
+				DB737B801DAE9E3800502AE8 /* ThemedNavagationController.swift in Sources */,
 				DBBC74751DA49FAA00C18114 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -749,12 +820,14 @@
 			baseConfigurationReference = 1D7141A9E39F6C6830556CC9 /* Pods-Apt. 50.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Apt. 50/Apt. 50.entitlements";
 				DEVELOPMENT_TEAM = 4637N428EN;
 				INFOPLIST_FILE = "Apt. 50/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.codesmith.Apt--50";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -763,12 +836,14 @@
 			baseConfigurationReference = 818777D4FE7B60C1D775B4B6 /* Pods-Apt. 50.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Apt. 50/Apt. 50.entitlements";
 				DEVELOPMENT_TEAM = 4637N428EN;
 				INFOPLIST_FILE = "Apt. 50/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.codesmith.Apt--50";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
