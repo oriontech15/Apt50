@@ -41,10 +41,11 @@ import UIKit
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
+        UIView.animate(withDuration: 0.3, delay: 0.0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.8, options: <#T##UIViewAnimationOptions#>, animations: <#T##() -> Void#>, completion: <#T##((Bool) -> Void)?##((Bool) -> Void)?##(Bool) -> Void#>)
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
     }
     
     func setupView() {
