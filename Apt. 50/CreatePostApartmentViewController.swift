@@ -25,6 +25,7 @@ class CreatePostApartmentViewController: UIViewController, UITextFieldDelegate {
         // Do any additional setup after loading the view.
         createPickerView()
         self.contactInfoButton.isEnabled = false
+        self.contactInfoButton.layer.cornerRadius = self.contactInfoButton.frame.height / 2
     }
     
     func createPickerView() {
@@ -58,6 +59,7 @@ class CreatePostApartmentViewController: UIViewController, UITextFieldDelegate {
         
         apartmentNameTextField.delegate = self
         apartmentNameTextField.inputView = apartmentPickerBackground
+        apartmentNameTextField.layer.cornerRadius = apartmentNameTextField.frame.height / 2
     }
     
     func updateTheme() {

@@ -29,7 +29,8 @@ class CreatePostContactInfoViewController: UIViewController {
     @IBOutlet var textFields: [UITextField]!
     
     var selectColor: UIColor = UIColor.aptNone
-
+    var confirmed = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -50,11 +51,19 @@ class CreatePostContactInfoViewController: UIViewController {
         
         for textField in textFields {
             textField.backgroundColor = selectColor.withAlphaComponent(0.85)
+            textField.layer.cornerRadius = textField.frame.height / 2
         }
         
         editButton.backgroundColor = selectColor
-        confirmButton.backgroundColor = selectColor
+        editButton.layer.cornerRadius = editButton.frame.height / 2
+        
+        if !confirmed {
+            confirmButton.backgroundColor = selectColor
+        }
+        
+        confirmButton.layer.cornerRadius = confirmButton.frame.height / 2
         apartmentInfoButton.backgroundColor = selectColor
+        apartmentInfoButton.layer.cornerRadius = apartmentInfoButton.frame.height / 2
     }
 
     override func didReceiveMemoryWarning() {
@@ -96,11 +105,14 @@ class CreatePostContactInfoViewController: UIViewController {
     
     @IBAction func confirmButtonTapped(_ sender: AnyObject) {
         
-        confirmButton.setTitleColor(selectColor, for: .normal)
-        confirmButton.backgroundColor = .white
-        confirmButton.layer.borderWidth = 2
-        confirmButton.layer.borderColor = selectColor.cgColor
-        confirmButton.isEnabled = false
+        if !confirmed {
+            confirmButton.setTitleColor(selectColor, for: .normal)
+            confirmButton.backgroundColor = .white
+            confirmButton.layer.borderWidth = 2
+            confirmButton.layer.borderColor = selectColor.cgColor
+            confirmButton.isEnabled = false
+            confirmed = true
+        }
         
         UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.8, options: [], animations: { [unowned self] in
             

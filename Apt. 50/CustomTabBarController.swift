@@ -34,16 +34,14 @@ class CustomTabBarController: UITabBarController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
     }
     
     override func viewWillLayoutSubviews() {
         let kBarHeight: CGFloat = 60.0
         var tabFrame = self.tabBar.frame //self.TabBar is IBOutlet of your TabBar
         tabFrame.size.height = kBarHeight
-        tabFrame.origin.y = self.view.frame.size.height - kBarHeight;
-        self.tabBar.frame = tabFrame;
-        
+        tabFrame.origin.y = self.view.frame.size.height - kBarHeight
+        self.tabBar.frame = tabFrame        
     }
     
     func addDividers() {
