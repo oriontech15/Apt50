@@ -8,8 +8,7 @@
 
 import UIKit
 
-@IBDesignable
-class CircleView: UIView {
+@IBDesignable class CircleView: UIView {
 
     override func awakeFromNib() {
         super.awakeFromNib()

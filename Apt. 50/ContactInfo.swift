@@ -19,13 +19,14 @@ class ContactInfo: FirebaseType {
     }
     
     var identifier: String?
-    let contactName: String
-    let phoneNumber: String
+    var contactName: String
+    var phoneNumber: String
     var email: String?
     
     var dictionaryCopy: [String : AnyObject] {
         
         var dictionaryCopy = [kContactName : contactName as AnyObject, kPhoneNumber : phoneNumber as AnyObject]
+        
         guard let email = self.email else {
             return dictionaryCopy
         }
@@ -36,6 +37,7 @@ class ContactInfo: FirebaseType {
     }
     
     init(contactName: String, phoneNumber: String, email: String? = "") {
+        //self.identifier = UserController.shared.currentUser.uid
         self.contactName = contactName
         self.phoneNumber = phoneNumber
         self.email = email
@@ -47,6 +49,7 @@ class ContactInfo: FirebaseType {
         
         self.contactName = contactName
         self.phoneNumber = phoneNumber
+        self.identifier = identifier
         
         if let email = dictionary[kEmail] as? String {
             self.email = email

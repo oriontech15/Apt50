@@ -20,7 +20,7 @@ class ApartmentTypeTableViewCell: UITableViewCell {
     }
     
     func setupView() {
-        apartmentTypeSegmentedControl.items = ["Single", "Married", "Shared"]
+        apartmentTypeSegmentedControl.items = ["Male", "Female", "Married"]
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

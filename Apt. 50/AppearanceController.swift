@@ -7,22 +7,28 @@
 //
 
 import Foundation
+import UIKit
 
 class AppearanceController {
-    enum College: Int {
-        case byu = 0
-        case uvu = 1
-        case none = 2
-        
-        static let allTypes = [byu, uvu, none]
-    }
     
     static let shared = AppearanceController()
+    
+    func systemFont(name: String, size: CGFloat) -> UIFont? {
+        return UIFont(name: "Avenir-\(name)", size: size)
+    }
     
     var selectedCollege: College = .none {
         didSet {
             let notification = Notification.Name("themeChange")
             NotificationCenter.default.post(name: notification, object: nil)
         }
+    }
+    
+    var selectedColor: UIColor {
+        return selectedCollege.color
+    }
+    
+    var selectedThemeImage: UIImage {
+        return selectedCollege.photoImage
     }
 }

@@ -35,6 +35,8 @@ class CreatePostContactInfoViewController: UIViewController {
         super.viewDidLoad()
 
         self.apartmentInfoButton.isEnabled = false
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -48,6 +50,13 @@ class CreatePostContactInfoViewController: UIViewController {
         case .none:
             selectColor = UIColor.aptNone
         }
+        
+        emailTextField.text = UserController.shared.user.contactInfo?.email ?? ""
+        phoneTextField.text = UserController.shared.user.contactInfo?.phoneNumber
+        nameTextField.text = UserController.shared.user.contactInfo?.contactName
+        emailLabel.text = UserController.shared.user.contactInfo?.email ?? ""
+        phoneLabel.text = UserController.shared.user.contactInfo?.phoneNumber
+        nameLabel.text = UserController.shared.user.contactInfo?.contactName
         
         for textField in textFields {
             textField.backgroundColor = selectColor.withAlphaComponent(0.85)
@@ -145,7 +154,9 @@ class CreatePostContactInfoViewController: UIViewController {
     }
     
     @IBAction func apartmentInfoButtonTapped(_ sender: AnyObject) {
-        print("Apartment Button Tapped")
+        let contactInfo = ContactInfo(contactName: nameLabel.text!, phoneNumber: phoneLabel.text!, email: emailLabel.text ?? "")
+        PostController.shared.tempPost?.contactInfo = contactInfo
+        self.performSegue(withIdentifier: "toApartmentInfoSegue", sender: nil)
     }
     
     /*
@@ -159,3 +170,10 @@ class CreatePostContactInfoViewController: UIViewController {
     */
 
 }
+
+
+
+
+
+
+

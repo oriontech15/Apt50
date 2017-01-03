@@ -8,19 +8,37 @@
 
 import UIKit
 import CoreData
+import Firebase
+import GoogleSignIn
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegate {
     
     var window: UIWindow?
     
-    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
+
         UIApplication.shared.statusBarStyle = .lightContent
+        FIRApp.configure()
+        
+        GIDSignIn.sharedInstance().clientID = FIRApp.defaultApp()?.options.clientID
+        
+        ApartmentController.shared.checkApartments { (apartmentIDs) in
+            if let apartmentIDs = apartmentIDs {
+                ApartmentController.shared.createApartments(apartmentIDs: apartmentIDs, completion: { (created) in
+                    print("Created: \(created)")
+                })
+            }
+        }
         
         return true
+    }
+    
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        return GIDSignIn.sharedInstance().handle(url,
+                                                    sourceApplication: sourceApplication,
+                                                    annotation: annotation)
     }
     
     public func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {

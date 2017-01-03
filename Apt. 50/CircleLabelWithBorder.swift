@@ -8,7 +8,6 @@
 
 import UIKit
 
-@IBDesignable
 class CircleLabelWithBorder: UILabel {
     
     @IBInspectable var borderWidth: CGFloat = 1 {

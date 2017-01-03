@@ -8,7 +8,6 @@
 
 import UIKit
 
-@IBDesignable
 class CustomRoundedView: UIView {
     
     @IBInspectable var cornerRadius: CGFloat = 0 {
@@ -18,6 +17,18 @@ class CustomRoundedView: UIView {
     }
     
     @IBInspectable var border: Bool = false {
+        didSet {
+            setupView()
+        }
+    }
+    
+    @IBInspectable var borderColor: UIColor = UIColor.white {
+        didSet {
+            setupView()
+        }
+    }
+    
+    @IBInspectable var borderWidth: CGFloat = 0.0 {
         didSet {
             setupView()
         }
@@ -51,8 +62,8 @@ class CustomRoundedView: UIView {
         }
         
         if border {
-            self.layer.borderColor = UIColor.white.cgColor
-            self.layer.borderWidth = 0.8
+            self.layer.borderColor = borderColor.cgColor
+            self.layer.borderWidth = borderWidth
         }
     }
     

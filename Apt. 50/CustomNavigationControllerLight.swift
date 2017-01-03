@@ -25,15 +25,15 @@ class CustomNavigationControllerLight: UINavigationController {
         case .byu:
             self.navigationBar.barTintColor = UIColor.aptBYU
             self.navigationBar.tintColor = .white
-            self.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
+            self.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white, NSFontAttributeName : AppearanceController.shared.systemFont(name: "Heavy", size: 17)!]
         case .uvu:
             self.navigationBar.barTintColor = UIColor.aptUVU
             self.navigationBar.tintColor = .white
-            self.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
+            self.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white, NSFontAttributeName : AppearanceController.shared.systemFont(name: "Heavy", size: 17)!]
         case .none:
             self.navigationBar.barTintColor = UIColor.aptNone
             self.navigationBar.tintColor = .white
-            self.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
+            self.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white, NSFontAttributeName : AppearanceController.shared.systemFont(name: "Heavy", size: 17)!]
         }
     }
     

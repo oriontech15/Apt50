@@ -18,18 +18,23 @@ class Post: FirebaseType {
     private let kTVType = "tvType"
     private let kInternetType = "internetType"
     private let kLaundryType = "laundryType"
+    private let kParkingType = "parkingType"
     private let kPhotos = "photos"
+    private let kRent = "rentPrice"
     
-    var apartment: Apartment!
+    var apartment: Apartment?
     var apartmentID: String = ""
-    var contactInfo: ContactInfo!
+    var contactInfo: ContactInfo?
     var contactInfoID: String = ""
-    var roomType: Int
-    var apartmentType: Int
-    var tvType: Int
-    var internetType: Int
-    var laundryType: Int
-    var photoURLs: [String]
+    var roomType: String
+    var apartmentType: String
+    var tvType: String
+    var internetType: String
+    var laundryType: String
+    var parkingType: String
+    var rentPrice: Double
+    var photoURLs: [String : String]?
+    var photos: [UIImage] = []
     
     var endpoint: String {
         return "Posts"
@@ -38,6 +43,7 @@ class Post: FirebaseType {
     var identifier: String?
     
     var dictionaryCopy: [String : AnyObject] {
+        let rent = NSNumber(value: rentPrice)
         let dictionaryCopy: [String : AnyObject] = [kApartment : apartmentID as AnyObject,
                                                     kContactInfo: contactInfoID as AnyObject,
                                                     kRoomType: roomType as AnyObject,
@@ -45,48 +51,88 @@ class Post: FirebaseType {
                                                     kTVType: tvType as AnyObject,
                                                     kInternetType: internetType as AnyObject,
                                                     kLaundryType: laundryType as AnyObject,
+                                                    kParkingType: parkingType as AnyObject,
+                                                    kRent : rent as AnyObject,
                                                     kPhotos : photoURLs as AnyObject]
         
         return dictionaryCopy
     }
     
     init(apartment: Apartment,
-         contactInfo: ContactInfo,
-         roomType: RoomType,
-         apartmentType: ApartmentType,
-         tvType: TVType,
-         internetType: InternetType,
-         laundryType: LaundryType,
-         photoURLs: [String]) {
+         contactInfo: ContactInfo?,
+         roomType: String,
+         apartmentType: String,
+         tvType: String,
+         internetType: String,
+         laundryType: String,
+         parkingType: String,
+         rentPrice: Double,
+         photoURLs: [String : String]) {
         
         self.apartment = apartment
-        self.contactInfo = contactInfo
-        self.roomType = roomType.hashValue
-        self.apartmentType = apartmentType.hashValue
-        self.tvType = tvType.hashValue
-        self.internetType = internetType.hashValue
-        self.laundryType = laundryType.hashValue
-        self.photoURLs = photoURLs
-    }
-    
-    required init?(dictionary: [String : AnyObject], identifier: String) {
-        guard let apartmentID = dictionary[kApartment] as? String,
-            let contactInfoID = dictionary[kContactInfo] as? String,
-            let roomType = dictionary[kRoomType] as? Int,
-            let apartmentType = dictionary[kApartmentType] as? Int,
-            let tvType = dictionary[kTVType] as? Int,
-            let internetType = dictionary[kInternetType] as? Int,
-            let laundryType = dictionary[kLaundryType] as? Int,
-            let photoURLs = dictionary[kPhotos] as? [String] else { return nil }
         
-        self.apartmentID = apartmentID
-        self.contactInfoID = contactInfoID
-        self.photoURLs = photoURLs
+        self.contactInfo = contactInfo
         self.roomType = roomType
         self.apartmentType = apartmentType
         self.tvType = tvType
         self.internetType = internetType
         self.laundryType = laundryType
+        self.photoURLs = photoURLs
+        self.parkingType = parkingType
+        self.rentPrice = rentPrice
+        
+        if let apartmentID = apartment.identifier {
+            self.apartmentID = apartmentID
+        }
+        
+        if let contactInfoID = contactInfo?.identifier {
+            self.contactInfoID = contactInfoID
+        }
+    }
+    
+    convenience init() {
+        let roomType = RoomType.privateRoom.rawValue
+        let apartmentType = ApartmentType.male.rawValue
+        let tvType = TVType.notIncluded.rawValue
+        let internetType = InternetType.notIncluded.rawValue
+        let laundryType = LaundryType.apartment.rawValue
+        let parkingType = ParkingType.notIncluded.rawValue
+        let rentPrice = 0.0
+        let apartment = Apartment(name: Apartments.kingHenry, website: Apartments.kingHenry.website, apartmentID: Apartments.kingHenry.identifier)
+        self.init(apartment: apartment,
+                  contactInfo: nil,
+                  roomType: roomType,
+                  apartmentType: apartmentType,
+                  tvType: tvType,
+                  internetType: internetType,
+                  laundryType: laundryType,
+                  parkingType: parkingType,
+                  rentPrice: rentPrice,
+                  photoURLs: [:])
+    }
+    
+    required init?(dictionary: [String : AnyObject], identifier: String) {
+        guard let apartmentID = dictionary[kApartment] as? String,
+            let contactInfoID = dictionary[kContactInfo] as? String,
+            let roomType = dictionary[kRoomType] as? String,
+            let apartmentType = dictionary[kApartmentType] as? String,
+            let tvType = dictionary[kTVType] as? String,
+            let internetType = dictionary[kInternetType] as? String,
+            let laundryType = dictionary[kLaundryType] as? String,
+            let parkingType = dictionary[kParkingType] as? String,
+            let rentPrice = dictionary[kRent] as? NSNumber,
+            let photoURLs = dictionary[kPhotos] as? [String : String] else { return nil }
+        
+        self.identifier = identifier
+        self.apartmentID = apartmentID
+        self.contactInfoID = contactInfoID
+        self.roomType = roomType
+        self.apartmentType = apartmentType
+        self.tvType = tvType
+        self.internetType = internetType
+        self.laundryType = laundryType
+        self.parkingType = parkingType
+        self.rentPrice = rentPrice.doubleValue
         self.photoURLs = photoURLs
     }
 }

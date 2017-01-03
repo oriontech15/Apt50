@@ -8,7 +8,7 @@
 
 import UIKit
 
-@IBDesignable class CustomSegmentedControl: UIControl {
+class CustomSegmentedControl: UIControl {
     
     @IBInspectable var cornerRadius: CGFloat = 0 {
         didSet {
@@ -133,7 +133,7 @@ import UIKit
         separators.removeAll(keepingCapacity: true)
         
         if items.count > 0 {
-            for index in 1...items.count {
+            for _ in 1...items.count {
                 
                 let sep = UIView(frame: .zero)
                 sep.backgroundColor = UIColor.white
@@ -185,7 +185,7 @@ import UIKit
     }
     
     func displayNewSelectedIndex(){
-        for (index, item) in labels.enumerated() {
+        for (_, item) in labels.enumerated() {
             item.textColor = unselectedLabelColor.withAlphaComponent(0.6)
             item.backgroundColor = UIColor.lightGray.withAlphaComponent(0.1)
             item.layer.borderWidth = borderWidth / 2

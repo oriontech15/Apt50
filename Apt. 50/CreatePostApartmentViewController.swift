@@ -15,17 +15,21 @@ class CreatePostApartmentViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var contactInfoButtonBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var websiteLabel: UILabel!
     
-    var selectedApartment: Int = 0
+    var selectedApartmentRow: Int = 0
+    var selectedApartment: Apartment!
     
     var apartmentPickerView: UIPickerView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
+        PostController.shared.tempPost = Post()
+        
         createPickerView()
         self.contactInfoButton.isEnabled = false
         self.contactInfoButton.layer.cornerRadius = self.contactInfoButton.frame.height / 2
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+
     }
     
     func createPickerView() {
@@ -118,17 +122,22 @@ class CreatePostApartmentViewController: UIViewController, UITextFieldDelegate {
         self.view.endEditing(true)
         let deadlineTime = DispatchTime.now() + 0.2
         DispatchQueue.main.asyncAfter(deadline: deadlineTime) {
+            PostController.shared.tempPhotos = [:]
             self.dismiss(animated: true, completion: nil)
         }
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         showNextButton(show: false)
-        let apartmentName = Array(ApartmentController.shared.apartmentList().keys)[selectedApartment] 
+        let apartmentName = ApartmentController.shared.apartments[selectedApartmentRow].name.rawValue
         apartmentNameTextField.text = apartmentName
-        if let website = ApartmentController.shared.apartmentList()[apartmentName] {
-            self.websiteLabel.text = website
-        }
+        let website = ApartmentController.shared.apartments[selectedApartmentRow].website
+        self.websiteLabel.text = website
+    }
+    
+    @IBAction func toContactInfoButtonTapped() {
+        PostController.shared.tempPost?.apartment = ApartmentController.shared.apartments[selectedApartmentRow]
+        self.performSegue(withIdentifier: "toContactInfoSegue", sender: nil)
     }
     
     /*
@@ -145,7 +154,7 @@ class CreatePostApartmentViewController: UIViewController, UITextFieldDelegate {
 
 extension CreatePostApartmentViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return ApartmentController.shared.apartmentList().count
+        return ApartmentController.shared.apartments.count
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -153,22 +162,22 @@ extension CreatePostApartmentViewController: UIPickerViewDataSource, UIPickerVie
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        let keys = Array(ApartmentController.shared.apartmentList().keys)
-        return keys[row]
+        let apartmentName = ApartmentController.shared.apartments[row].name
+        return apartmentName.rawValue
     }
     
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-        let apartmentName = Array(ApartmentController.shared.apartmentList().keys)[row]
+        let apartmentName = ApartmentController.shared.apartments[row].name.rawValue
         let string = NSAttributedString(string: apartmentName, attributes: [NSForegroundColorAttributeName: UIColor.white])
         return string
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        self.selectedApartment = row
-        let apartmentName = Array(ApartmentController.shared.apartmentList().keys)[row]
+        self.selectedApartmentRow = row
+        
+        let apartmentName = ApartmentController.shared.apartments[row].name.rawValue
         self.apartmentNameTextField.text = apartmentName
-        if let website = ApartmentController.shared.apartmentList()[apartmentName] {
-            self.websiteLabel.text = website
-        }
+        let website = ApartmentController.shared.apartments[row].website
+        self.websiteLabel.text = website
     }
 }

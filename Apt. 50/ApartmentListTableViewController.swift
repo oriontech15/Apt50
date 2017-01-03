@@ -10,8 +10,10 @@ import UIKit
 
 class ApartmentListTableViewController: UITableViewController {
     
-    var apartments: [Apartment] {
-        return ApartmentController.shared.mockApartments()
+    var apartments: [Apartment] = [] {
+        didSet {
+            self.tableView.reloadData()
+        }
     }
     
     @IBOutlet weak var tableHeaderView: UIView!
@@ -19,14 +21,17 @@ class ApartmentListTableViewController: UITableViewController {
     var selectedThemeColor: UIColor = UIColor.aptNone
     var selectedTextColor: UIColor = UIColor.aptNone
     
+    var alreadyAnimated: Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-                
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(updateApartments), name: notificationApartmentsUpdated, object: nil)
         self.navigationItem.title = "Buildings"
         
         self.tabBarController?.delegate = UIApplication.shared.delegate as? UITabBarControllerDelegate
         
-        self.automaticallyAdjustsScrollViewInsets = true 
+        self.automaticallyAdjustsScrollViewInsets = true
         
         self.parent!.tabBarItem!.image = #imageLiteral(resourceName: "PostList").withRenderingMode(.alwaysOriginal)
         self.parent!.tabBarItem!.selectedImage = #imageLiteral(resourceName: "PostListSelected").withRenderingMode(.alwaysOriginal)
@@ -37,11 +42,14 @@ class ApartmentListTableViewController: UITableViewController {
         
         print(dateString)
         
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        checkLogin()
+    }
+    
+    func checkLogin() {
+        if UserController.shared.user == nil {
+            
+            self.performSegue(withIdentifier: "toLoginSegue", sender: nil)
+        }
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -50,73 +58,61 @@ class ApartmentListTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setupBackground()
-        switch AppearanceController.shared.selectedCollege {
-        case .byu:
-//            self.tableView.backgroundColor = UIColor.aptBYU
-//            self.tableHeaderView.backgroundColor = UIColor.aptBYU
-            self.selectedThemeColor = UIColor.aptBYU
-            self.selectedTextColor = UIColor.aptBYU
-            
-            let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: self.tableView.frame.width, height: self.tableView.frame.height))
-            imageView.image = #imageLiteral(resourceName: "BackgroundViewBlue")
-            self.tableView.backgroundView = imageView
-            
-            self.tabBarController?.tabBar.items?[0].image = #imageLiteral(resourceName: "PostList").withRenderingMode(.alwaysOriginal)
-            self.tabBarController?.tabBar.items?[1].image = #imageLiteral(resourceName: "CreatePostBlue").withRenderingMode(.alwaysOriginal)
-            self.tabBarController?.tabBar.items?[2].image = #imageLiteral(resourceName: "Profile").withRenderingMode(.alwaysOriginal)
-            self.tabBarController?.tabBar.items?[0].selectedImage = #imageLiteral(resourceName: "PostListSelectedBlue").withRenderingMode(.alwaysOriginal)
-            self.tabBarController?.tabBar.items?[1].selectedImage = #imageLiteral(resourceName: "CreatePostBlue").withRenderingMode(.alwaysOriginal)
-            self.tabBarController?.tabBar.items?[2].selectedImage = #imageLiteral(resourceName: "ProfileSelectedBlue").withRenderingMode(.alwaysOriginal)
-            
-        case .uvu:
-//            self.tableView.backgroundColor = UIColor.aptUVU
-//            self.tableHeaderView.backgroundColor = UIColor.aptUVU
-            self.selectedTextColor = UIColor.aptUVU
-            self.selectedThemeColor = UIColor.aptUVU
-            
-            let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: self.tableView.frame.width, height: self.tableView.frame.height))
-            imageView.image = #imageLiteral(resourceName: "BackgroundViewGreen")
-            self.tableView.backgroundView = imageView
-            
-            self.tabBarController?.tabBar.items?[0].image = #imageLiteral(resourceName: "PostList").withRenderingMode(.alwaysOriginal)
-            self.tabBarController?.tabBar.items?[1].image = #imageLiteral(resourceName: "CreatePostGreen").withRenderingMode(.alwaysOriginal)
-            self.tabBarController?.tabBar.items?[2].image = #imageLiteral(resourceName: "Profile").withRenderingMode(.alwaysOriginal)
-            self.tabBarController?.tabBar.items?[0].selectedImage = #imageLiteral(resourceName: "PostListSelectedGreen").withRenderingMode(.alwaysOriginal)
-            self.tabBarController?.tabBar.items?[1].selectedImage = #imageLiteral(resourceName: "CreatePostGreen").withRenderingMode(.alwaysOriginal)
-            self.tabBarController?.tabBar.items?[2].selectedImage = #imageLiteral(resourceName: "ProfileSelectedGreen").withRenderingMode(.alwaysOriginal)
-        case .none:
-//            self.tableView.backgroundColor = UIColor.aptNone
-//            self.tableHeaderView.backgroundColor = UIColor.aptNone
-            self.selectedThemeColor = UIColor.aptNone
-            self.selectedTextColor = UIColor.aptNone
-            
-            let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: self.tableView.frame.width, height: self.tableView.frame.height))
-            imageView.image = #imageLiteral(resourceName: "BackgroundViewSalmon")
-            self.tableView.backgroundView = imageView
-            
-            self.tabBarController?.tabBar.items?[0].image = #imageLiteral(resourceName: "PostList").withRenderingMode(.alwaysOriginal)
-            self.tabBarController?.tabBar.items?[1].image = #imageLiteral(resourceName: "CreatePost1").withRenderingMode(.alwaysOriginal)
-            self.tabBarController?.tabBar.items?[2].image = #imageLiteral(resourceName: "Profile").withRenderingMode(.alwaysOriginal)
-            self.tabBarController?.tabBar.items?[0].selectedImage = #imageLiteral(resourceName: "PostListSelected").withRenderingMode(.alwaysOriginal)
-            self.tabBarController?.tabBar.items?[1].selectedImage = #imageLiteral(resourceName: "CreatePost1").withRenderingMode(.alwaysOriginal)
-            self.tabBarController?.tabBar.items?[2].selectedImage = #imageLiteral(resourceName: "ProfileSelected").withRenderingMode(.alwaysOriginal)
-        }
+        
+        let selectedCollege = AppearanceController.shared.selectedCollege
+        
+        self.selectedTextColor = selectedCollege.color
+        self.selectedThemeColor = selectedCollege.color
+        
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: self.tableView.frame.width, height: self.tableView.frame.height))
+        imageView.image = selectedCollege.backgroundImage
+        self.tableView.backgroundView = imageView
+        
+        self.tabBarController?.tabBar.items?[0].image = selectedCollege.unselectedImages.postList.withRenderingMode(.alwaysOriginal)
+        self.tabBarController?.tabBar.items?[1].image = selectedCollege.unselectedImages.createPost.withRenderingMode(.alwaysOriginal)
+        self.tabBarController?.tabBar.items?[2].image = selectedCollege.unselectedImages.profile.withRenderingMode(.alwaysOriginal)
+        self.tabBarController?.tabBar.items?[0].selectedImage = selectedCollege.postListImage.withRenderingMode(.alwaysOriginal)
+        self.tabBarController?.tabBar.items?[1].selectedImage = selectedCollege.createImage.withRenderingMode(.alwaysOriginal)
+        self.tabBarController?.tabBar.items?[2].selectedImage = selectedCollege.profileImage.withRenderingMode(.alwaysOriginal)
         
         self.tableView.reloadData()
-    }
-    
-    func setupBackground() {
         
+        if !alreadyAnimated {
+            ApartmentController.shared.getApartments { (apartments) in
+                if let apartments = apartments {
+                    let sortedApartments = apartments.sorted(by: ({ $0.name.rawValue < $1.name.rawValue }))
+                    ApartmentController.shared.apartments = sortedApartments
+                    self.updateApartments()
+                    self.animateCells()
+                    self.alreadyAnimated = true
+                }
+            }
+        }
     }
     
-    override func viewWillLayoutSubviews() {
-        //self.tableView.contentInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+    var index = 0
+    
+    func animateCells() {
+        
+        self.tableView.reloadData()
+        
+        let cells = self.tableView.visibleCells
+        let tableHeight: CGFloat = tableView.bounds.size.height
+        
+        for cell in cells {
+            cell.transform = CGAffineTransform(translationX: 0, y: -tableHeight)
+            
+            UIView.animate(withDuration: 1.5, delay: 0.05 * Double(self.index + 1), usingSpringWithDamping: 0.8, initialSpringVelocity: 0.3, options: [], animations: {
+                cell.transform = CGAffineTransform(translationX: 0, y: 0);
+            }, completion: nil)
+            
+            self.index = self.index + 1
+        }
     }
-//    
-//    override var prefersStatusBarHidden: Bool {
-//        return true
-//    }
+    
+    func updateApartments() {
+        self.apartments = ApartmentController.shared.apartments
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -126,7 +122,6 @@ class ApartmentListTableViewController: UITableViewController {
     // MARK: - Table view data source
     
     var mockApartmentListings = [0, 5, 2, 15, 8, 6, 10, 11]
-    
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -141,14 +136,16 @@ class ApartmentListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //if let cell = sender.view?.superview?.superview {
         
-        let cell = tableView.cellForRow(at: indexPath) as? ApartmentTableViewCell
-        
-        UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.8, options: [], animations: {
-            cell?.leftAccentViewWidthConstraint.constant = cell?.mainSubView.frame.width ?? 60
-            self.view.layoutIfNeeded()
-        }) { (bool) in
+        if let cell = tableView.cellForRow(at: indexPath) as? ApartmentTableViewCell {
             
-            self.performSegue(withIdentifier: "toListingsSegue", sender: cell)
+            UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 0.3, initialSpringVelocity: 0.8, options: [], animations: { _ in
+                
+                cell.leftAccentView.frame = CGRect(x: 5, y: 5, width: cell.leftAccentView.frame.width - 10, height: cell.leftAccentView.frame.height - 10)
+                cell.leftAccentView.layer.cornerRadius = cell.leftAccentView.frame.height / 2
+            }, completion: {_ in
+                cell.reset()
+                self.performSegue(withIdentifier: "toListingsSegue", sender: cell)
+            })
         }
     }
     
@@ -156,26 +153,14 @@ class ApartmentListTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "apartmentCell", for: indexPath) as? ApartmentTableViewCell
         
         let name = apartments[indexPath.section].name
-        let listingNum = apartments[indexPath.section].listings?.count ?? 0
+        let listingNum = apartments[indexPath.section].listings.count
         
-        cell?.leftAccentViewWidthConstraint.constant = 60
-        cell?.updateWith(name: name, numberOfListings: listingNum, selectedColor: selectedThemeColor)
-        
-        //        let separatorView = UIView(frame: CGRect(x: 10, y: 58, width: self.view.frame.width, height: 1))
-        //        separatorView.backgroundColor = UIColor.aptGray
-        //
-        //        print(cell?.frame.height)
-        //
-        //        if indexPath.row != mockApartmentNames.count - 1 {
-        //            cell?.addSubview(separatorView)
-        //        }
+        cell?.updateWith(name: name.rawValue, numberOfListings: listingNum, selectedColor: selectedThemeColor)
         
         return cell ?? UITableViewCell()
     }
     
-    // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
         return false
     }
     
@@ -196,34 +181,8 @@ class ApartmentListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cell.backgroundColor = .clear
         cell.contentView.backgroundColor = .clear
+        
     }
-    
-    /*
-     // Override to support editing the table view.
-     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-     if editingStyle == .delete {
-     // Delete the row from the data source
-     tableView.deleteRows(at: [indexPath], with: .fade)
-     } else if editingStyle == .insert {
-     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-     }
-     }
-     */
-    
-    /*
-     // Override to support rearranging the table view.
-     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-     
-     }
-     */
-    
-    /*
-     // Override to support conditional rearranging of the table view.
-     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the item to be re-orderable.
-     return true
-     }
-     */
     
     // MARK: - Navigation
     

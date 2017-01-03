@@ -13,11 +13,18 @@ class ApartmentTableViewCell: UITableViewCell {
     @IBOutlet weak var apartmentNameLabel: CircleLabelWithBorder!
     @IBOutlet weak var numberOfListingsLabel: CircleLabelWithBorder!
     @IBOutlet weak var mainSubView: CustomRoundedView!
-    @IBOutlet weak var leftAccentView: CustomRoundedView!
+    var leftAccentView: UIView!
     @IBOutlet weak var forwardArrowImageView: UIImageView!
 
-    @IBOutlet weak var leftAccentViewWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var mainSubLeadingConstraint: NSLayoutConstraint!
+        
+    let color1 = UIColor(red: 1.000, green: 0.227, blue: 0.318, alpha: 1.00).cgColor
+    let color2 = UIColor(red: 1.000, green: 0.647, blue: 0.000, alpha: 1.00).cgColor
+    let color3 = UIColor(red: 0.988, green: 0.200, blue: 0.769, alpha: 1.00).cgColor
+    
+    var gradient : CAGradientLayer?
+    var toColors : [CGColor]?
+    var fromColors : [CGColor]?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,17 +34,32 @@ class ApartmentTableViewCell: UITableViewCell {
         mainSubView.layer.shadowOffset = CGSize(width: 0, height: 2)
         mainSubView.layer.shadowRadius = 1
         mainSubView.layer.shadowOpacity = 1.0
-    }
-
-    override func layoutSubviews() {
         
+        setupView()
+    }
+    
+    func setupView() {
+        leftAccentView = UIView(frame: CGRect(x: 0, y: 0, width: mainSubView.bounds.width, height: 60))
+        leftAccentView.layer.cornerRadius = leftAccentView.bounds.height / 2
+        
+        mainSubView.insertSubview(leftAccentView, at: 0)
+        mainSubView.bringSubview(toFront: apartmentNameLabel)
+        mainSubView.bringSubview(toFront: numberOfListingsLabel)
+    }
+    
+    func reset() {
+        UIView.animate(withDuration: 0.5, delay: 0.2, usingSpringWithDamping: 0.4, initialSpringVelocity: 0.4, options: [], animations: { _ in
+            
+            self.leftAccentView.frame = self.mainSubView.bounds
+            self.leftAccentView.layer.cornerRadius = self.leftAccentView.frame.height / 2
+        }, completion: {_ in
+            
+        })
     }
     
     func updateWith(name: String, numberOfListings: Int, selectedColor: UIColor) {
         apartmentNameLabel.text = name
         numberOfListingsLabel.text = "\(numberOfListings)"
-//        apartmentNameLabel.textColor = backgroundColor
-        mainSubView.backgroundColor = .white
         
         switch selectedColor {
         case UIColor.aptBYU:
@@ -52,11 +74,10 @@ class ApartmentTableViewCell: UITableViewCell {
         default:
             break
         }
-        
-        apartmentNameLabel.borderColor = selectedColor
-        apartmentNameLabel.borderWidth = 2
-        leftAccentView.backgroundColor = selectedColor
+
+        mainSubView.backgroundColor = .darkGray
         numberOfListingsLabel.backgroundColor = selectedColor
+        leftAccentView.backgroundColor = AppearanceController.shared.selectedCollege.color
         numberOfListingsLabel.borderColor = UIColor.white
         numberOfListingsLabel.textColor = .white
         numberOfListingsLabel.borderWidth = 1

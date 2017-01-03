@@ -1,0 +1,6 @@
+framework module Pods_Apt__50UITests {
+  umbrella header "Pods-Apt. 50UITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

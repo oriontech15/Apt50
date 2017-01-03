@@ -20,7 +20,7 @@ class RoomTypeTableViewCell: UITableViewCell {
         }
         
         func setupView() {
-            roomTypeSegmentedControl.items = ["Single", "Shared"]
+            roomTypeSegmentedControl.items = ["Private", "Shared"]
         }
         
         override func setSelected(_ selected: Bool, animated: Bool) {

@@ -1,0 +1,6 @@
+framework module Pods_Apt__50 {
+  umbrella header "Pods-Apt. 50-umbrella.h"
+
+  export *
+  module * { export * }
+}
